@@ -1,5 +1,5 @@
  /*!
-  * file readTemperature.ino
+  * file SPIReadTemperature.ino
   * 
   * 将BMP388连接到Arduino的SPI接口上, 下载程序
   * @n 打开 serial monitor 可以看到检测的温度.
@@ -11,7 +11,7 @@
   * date  2018-5-29
   */
 #include "DFRobot_BMP388.h"
-#include "Wire.h"
+#include "SPI.h"
 
 /*创建一个spi接口的bmp388对象,spi的片选引脚为3*/
 DFRobot_BMP388 bmp388(3);

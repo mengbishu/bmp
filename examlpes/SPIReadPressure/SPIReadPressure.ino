@@ -1,8 +1,8 @@
  /*!
-  * file readPressure.ino
+  * file SPIReadPressure.ino
   * 
   * 将BMP388连接到Arduino的SPI接口上, 下载程序
-  * @n 打开 serial monitor 可以看到检测的温度.
+  * @n 打开 serial monitor 可以看到检测的大气压.
   *
   * Copyright   [DFRobot](http://www.dfrobot.com), 2016
   * Copyright   GNU Lesser General Public License
@@ -11,12 +11,12 @@
   * date  2018-5-29
   */
 #include "DFRobot_BMP388.h"
-#include "Wire.h"
+#include "SPI.h"
 
 /*创建一个spi接口的bmp388对象,spi的片选引脚为3*/
 DFRobot_BMP388 bmp388(3);
 void setup(){
-  while(!Serial);
+  /*串口初始化*/
   Serial.begin(9600);
   /*bmp388初始化*/
   bmp388.begin();
